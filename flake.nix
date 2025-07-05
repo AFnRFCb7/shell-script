@@ -14,10 +14,7 @@
                                     name ,
                                     nixpkgs ,
                                     profile ? null ,
-                                    script ,
-                                    sleep ? 0 ,
-                                    system ,
-                                    over-initialized-target-error-code ? 66
+                                    script
                                 } :
                                     let
                                         pkgs = builtins.import nixpkgs { system = system ; } ;
