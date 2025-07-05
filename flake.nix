@@ -25,7 +25,7 @@
                                                         extraBwrapArgs = builtins.attrValues ( builtins.mapAttrs ( name : { host-path , is-read-only , ... } : "${ if is-read-only then "--ro-bind" else "--bind" } ${ host-path } ${ name }" ) mounts ) ;
                                                         name = name ;
                                                         profile = profile ;
-                                                        runScript = script ;
+                                                        runScript = script extensions ;
                                                     } ;
                                         in
                                             {
