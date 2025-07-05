@@ -14,7 +14,8 @@
                                     name ,
                                     nixpkgs ,
                                     profile ? null ,
-                                    script
+                                    script ,
+					system
                                 } :
                                     let
                                         pkgs = builtins.import nixpkgs { system = system ; } ;
