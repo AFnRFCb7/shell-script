@@ -29,7 +29,7 @@
                                                     } ;
                                         in
                                             {
-                                                shell-script = "${ shell-script { } }/bin/${ primary.name }" ;
+                                                shell-script = "${ shell-script { } }/bin/${ name }" ;
                                             } ;
 			} ;
 		} ;
