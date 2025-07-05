@@ -4,7 +4,7 @@
         } ;
     outputs =
         { self } :
-            let
+            {
 		lib =
 			{
                             implementation =
@@ -31,4 +31,5 @@
                                                 shell-script = "${ shell-script { } }/bin/${ primary.name }" ;
                                             } ;
 			} ;
+		} ;
 }
