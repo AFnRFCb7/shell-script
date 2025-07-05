@@ -15,10 +15,11 @@
                                     nixpkgs ,
                                     profile ? null ,
                                     script ,
-					system
+					system ,
+					targetPkgs ? pkgs : [ pkgs.coreutils ]
                                 } :
                                     let
-                                        pkgs = builtins.import nixpkgs { system = system ; } ;
+                                        pkgs = builtins.getAttr system nixpkgs.legacyPackages ;
                                         shell-script =
                                                 pkgs.buildFHSUserEnv
                                                     {
@@ -26,10 +27,11 @@
                                                         name = name ;
                                                         profile = profile ;
                                                         runScript = script extensions ;
+							targetPkgs = targetPkgs ;
                                                     } ;
                                         in
                                             {
-                                                shell-script = "${ shell-script { } }/bin/${ name }" ;
+                                                shell-script = "date" ; # "${ shell-script }/bin/${ name }" ;
                                             } ;
 			} ;
 		} ;
